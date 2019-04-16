@@ -3,13 +3,11 @@ services:                                     #Define the services to be run
   meandemo_mongo:                             # name of service
     build: 
       context: ./mongo                        #relative location of dockerfile
-      dockerfile: dockerfile                  #specific name of dockerfile
     #ports:
       #- "27017:27017"                        #port mapping / expose from container
   meandemo_express_node:                      #name of service
     build: 
       context: ./meandemo                     #relative location of dockerfile
-      dockerfile: dockerfile                  #specific name of dockerfile
     #ports:
       #- "3000:3000"                          #port mapping / expose from container
       #- "4200:4200"                          #port mapping / expose from container
@@ -18,7 +16,6 @@ services:                                     #Define the services to be run
   meandemo_nginx_angular_node:                #name of service
     build: 
       context: ./nginx                        #relative location of dockerfile
-      dockerfile: dockerfile                  #specific name of dockerfile
     ports:
       - "8080:80"                             #port mapping / expose 8080 from container internal 80
     depends_on:
