@@ -1,0 +1,23 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/entries']"><mat-icon>list</mat-icon></a>
+</div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title><h2>{{entry.title}}</h2></mat-card-title>
+    <mat-card-subtitle>{{entry.description}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <dl>
+      <dt>URL:</dt>
+      <dd>{{entry.URL}}</dd>
+      <dt>Author:</dt>
+      <dd>{{entry.author}}</dd>
+      <dt>Update Date:</dt>
+      <dd>{{entry.updated_date | date}}</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" [routerLink]="['/entry-edit', entry._id]"><mat-icon>edit</mat-icon></a>
+    <a mat-raised-button color="warn" (click)="deleteentry(entry._id)"><mat-icon>delete</mat-icon></a>
+  </mat-card-actions>
+</mat-card>

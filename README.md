@@ -1,0 +1,20 @@
+# One Mean CRUD on Docker Demo App
+The project contained in this repository provide a basic working CRUD application built on Docker to get you cvoding sooner.
+
+In order to share a baseline understanding of containerization technologies built on Docker along with the practical knowledge necessary to begin building, shipping and deploying MEAN (Mongo / Express / Angular / Node.js) applications in containers, this project has been developed and made available through our public repo.
+
+### Prerequisites
+- Internet Connection
+- Running Docker Engine
+
+###To run this project:
+1 - Download the repo (on Linux, be certain to also install docker-compose)
+2 - From the project directory, "docker-compose up"
+
+## Authors
+* **Mike Sellers - JHU**
+* **Ali Soylu - JHU**
+
+## Acknowledgments
+* This project was inspired by the Johns Hopkins University (JHU ACM) Association for Computing Machinery https://johnshopkins.campuslabs.com/engage/organization/associationforcomputingmachineryjhu and their passion for computing as well as their desire to collaborate.
+* This application was adapted and enhace from the "MEAN Stack Angular 6 CRUD Web Application" by Didin, J. https://www.djamware.com/post/5b00bb9180aca726dee1fd6d/mean-stack-angular-6-crud-web-application.

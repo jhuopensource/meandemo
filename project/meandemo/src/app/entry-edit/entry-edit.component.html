@@ -1,0 +1,36 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" (click)="entryDetails()"><mat-icon>show</mat-icon></a>
+</div>
+<form [formGroup]="entryForm" (ngSubmit)="onFormSubmit(entryForm.value)">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="URL" formControlName="URL"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!entryForm.get('URL').valid && entryForm.get('URL').touched">Please enter URL</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Title" formControlName="title"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!entryForm.get('title').valid && entryForm.get('title').touched">Please enter entry Title</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Author" formControlName="author"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!entryForm.get('author').valid && entryForm.get('author').touched">Please enter entry Author</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Description" formControlName="description"
+           [errorStateMatcher]="matcher"></textarea>
+    <mat-error>
+      <span *ngIf="!entryForm.get('description').valid && entryForm.get('description').touched">Please enter entry Description</span>
+    </mat-error>
+  </mat-form-field>
+  <div class="button-row">
+    <button type="submit" [disabled]="!entryForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+  </div>
+</form>

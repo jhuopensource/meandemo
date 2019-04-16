@@ -1,0 +1,7 @@
+Quick Start:
+1 - Ensure Docker is Installed
+2 - Download repo
+3 - From repo local directory, run "docker-compose up"
+
+To seed the database with demo data, run the following command:
+docker exec -it project_meandemo_mongo_1 mongoimport --db mean-angular6 --collection entries /home/data.json

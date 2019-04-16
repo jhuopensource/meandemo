@@ -1,0 +1,1 @@
+docker exec -it project_meandemo_mongo_1 mongoimport --db mean-angular6 --collection entries /home/data.json
