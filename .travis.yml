@@ -15,4 +15,5 @@ before_install:
 script:
   - cd project
   - docker-compose build
+  - docker images
   # Push it?
