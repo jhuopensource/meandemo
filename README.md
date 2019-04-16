@@ -12,8 +12,8 @@ In order to share a baseline understanding of containerization technologies buil
 2 - From the project directory, "docker-compose up"
 
 ## Authors
-* **Mike Sellers - JHU**
-* **Ali Soylu - JHU**
+* **Mike Sellers - JHU - Container Zealot and Senior Software Engineer**
+* **Ali Soylu - JHU - Developer and IT Architect**
 
 ## Acknowledgments
 * This project was inspired by the Johns Hopkins University (JHU ACM) Association for Computing Machinery https://johnshopkins.campuslabs.com/engage/organization/associationforcomputingmachineryjhu and their passion for computing as well as their desire to collaborate.
