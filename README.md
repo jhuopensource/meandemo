@@ -7,7 +7,7 @@ In order to share a baseline understanding of containerization technologies buil
 - Internet Connection
 - Running Docker Engine
 
-###To run this project:
+### To run this project
 * 1 - Download the repo (on Linux, be certain to also install docker-compose)
 * 2 - From the project directory, "docker-compose up"
 
