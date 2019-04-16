@@ -8,8 +8,8 @@ In order to share a baseline understanding of containerization technologies buil
 - Running Docker Engine
 
 ###To run this project:
-1 - Download the repo (on Linux, be certain to also install docker-compose)
-2 - From the project directory, "docker-compose up"
+* 1 - Download the repo (on Linux, be certain to also install docker-compose)
+* 2 - From the project directory, "docker-compose up"
 
 ## Authors
 * **Mike Sellers - JHU - Container Zealot and Senior Software Engineer**
@@ -17,4 +17,4 @@ In order to share a baseline understanding of containerization technologies buil
 
 ## Acknowledgments
 * This project was inspired by the Johns Hopkins University (JHU ACM) Association for Computing Machinery https://johnshopkins.campuslabs.com/engage/organization/associationforcomputingmachineryjhu and their passion for computing as well as their desire to collaborate.
-* This application was adapted and enhace from the "MEAN Stack Angular 6 CRUD Web Application" by Didin, J. https://www.djamware.com/post/5b00bb9180aca726dee1fd6d/mean-stack-angular-6-crud-web-application.
+* This application was adapted and enhaced from the "MEAN Stack Angular 6 CRUD Web Application" by Didin, J. https://www.djamware.com/post/5b00bb9180aca726dee1fd6d/mean-stack-angular-6-crud-web-application.
