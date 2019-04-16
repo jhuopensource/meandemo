@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng build && node ./bin/www",
+    "serve": "node ./bin/www",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
