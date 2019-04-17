@@ -11,6 +11,15 @@ In order to share a baseline understanding of containerization technologies buil
 * 1 - Download the repo (on Linux, be certain to also install docker-compose)
 * 2 - From the project directory, "docker-compose up"
 
+### Docker Hub JHUOPENSOURCE repo pull commands for project images
+Pulling from the Hub is optional for those who just want to run (this meets the "SHIP" requirement)
+* docker push jhuopensource/meandemo:nginx_angular_node
+* docker push jhuopensource/meandemo:express_node
+* docker push jhuopensource/meandemo:mongo
+
+### Travis Image Status
+<a href="https://travis-ci.com/jhuopensource/meandemo"><img src="https://api.travis-ci.com/jhuopensource/meandemo.svg?branch=master"></a>
+
 ## Authors
 * **Mike Sellers - JHU - Container Zealot and Senior Software Engineer**
 * **Ali Soylu - JHU - Developer and IT Architect**
