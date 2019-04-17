@@ -1,11 +1,13 @@
 version: '3.7'                                #specify docker-compose file format version
 services:                                     #Define the services to be run
   meandemo_mongo:                             # name of service
+    image: jhuopensource/meandemo:mongo
     build: 
       context: ./mongo                        #relative location of Dockerfile
     #ports:
       #- "27017:27017"                        #port mapping / expose from container
   meandemo_express_node:                      #name of service
+    image: jhuopensource/meandemo:express_node
     build: 
       context: ./meandemo                     #relative location of Dockerfile
     #ports:
@@ -14,6 +16,7 @@ services:                                     #Define the services to be run
     depends_on:
       - meandemo_mongo                        #dependency service
   meandemo_nginx_angular_node:                #name of service
+    image: jhuopensource/meandemo:nginx_angular_node
     build: 
       context: ./nginx                        #relative location of Dockerfile
     ports:
