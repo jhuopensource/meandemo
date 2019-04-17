@@ -1,0 +1,48 @@
+SLIDE 15
+a)  docker info
+		docker info
+b)	docker ps
+		docker ps –a
+c)	docker pull
+		docker pull node:10.15.3-alpine
+d)	docker run
+		docker run -it node:10.15.3-alpine ash
+e)	docker exec
+		docker exec -it 0ee8c4642c9e ls
+
+SLIDE 17 
+a)  docker build -t meandemo_express_node .
+b)  docker-compose build
+
+SLIDE 18
+a)  docker build --nocache -t meandemo_express_node .
+b)  docker-compose build --no-cache
+
+SLIDE 19
+a)  docker run -it node:10.15.3-alpine ash
+b)  docker-compose -f docker-compose.yml up
+
+SLIDE 20
+docker ps
+docker logs
+docker exec –it 275fc4b89d42 bash
+	cd /home && mongoimport 	--db mean-angular6 --collection entries /home/data.json 
+
+SLIDE 22
+1 – docker swarm init
+2 – docker node ls
+
+SLIDE 23
+1 – docker network create -d overlay --subnet=10.2.0.0/24 --gateway 10.2.0.1 --label 	com.docker.overlaynetwork=true mean-net
+2 – docker network ls
+
+SLIDE 24
+docker stack deploy -c docker-compose-stack.yml mean_stack
+
+SLIDE 25
+docker service scale mean_stack_meandemo_nginx_angular_node=5
+docker service ls
+
+SLIDE 26
+1 – docker push jhuopensource/meandemo:express_node
+	docker pull jhuopensource/meandemo:express_node
