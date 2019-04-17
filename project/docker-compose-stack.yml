@@ -4,15 +4,15 @@ services:                                     #Define the services to be run
     image: jhuopensource/meandemo:mongo       #specify the image to build the container from
     networks:
       - mean-net
-    ports:
-      - "27017:27017"                         #port mapping / expose from container
+    #ports:
+      #- 27017:27017                           #port mapping / expose from container
   meandemo_express_node:                      #name of service
     image: jhuopensource/meandemo:express_node
     networks:
       - mean-net
-    ports:
-      #- "3000:3000"                           #port mapping / expose from container
-      #- "4200:4200"                           #port mapping / expose from container
+    #ports:
+      #- 3000:3000                             #port mapping / expose from container
+      #- 4200:4200                             #port mapping / expose from container
     depends_on:
       - meandemo_mongo                        #dependency service
   meandemo_nginx_angular_node:                #name of service
@@ -20,7 +20,7 @@ services:                                     #Define the services to be run
     networks:
       - mean-net
     ports:
-      - "8080:80"                               #port mapping / expose from container
+      - 8080:80                               #port mapping / expose from container
     depends_on:
       - meandemo_express_node                 #dependency service
 networks:
