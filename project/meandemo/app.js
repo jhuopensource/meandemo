@@ -29,11 +29,14 @@ var app = express();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+/*
+// Remove static from node, nginx handles this
 app.use(express.static(path.join(__dirname, 'dist/mean-angular6')));
 app.use('/entries', express.static(path.join(__dirname, 'dist/mean-angular6')));
 app.use('/entry-details/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
 app.use('/entry-create', express.static(path.join(__dirname, 'dist/mean-angular6')));
 app.use('/entry-edit/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
+*/
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
