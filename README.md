@@ -17,6 +17,12 @@ Pulling from the Hub is optional for those who just want to run (this meets the 
 * docker push jhuopensource/meandemo:express_node
 * docker push jhuopensource/meandemo:mongo
 
+### Docker Hub Integration added 4/22/19
+All automatic image builds are stored in the Docker Hub jhuopensource registry
+* docker pull jhuopensource/meandemo:mongo
+* docker pull jhuopensource/meandemo:express_node
+* docker pull jhuopensource/meandemo:nginx_angular_node
+
 ### Travis Image Status
 <a href="https://travis-ci.com/jhuopensource/meandemo"><img src="https://api.travis-ci.com/jhuopensource/meandemo.svg?branch=master"></a>
 
