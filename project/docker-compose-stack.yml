@@ -20,7 +20,7 @@ services:                                     #Define the services to be run
     networks:
       - mean-net
     ports:
-      - 8080:80                               #port mapping / expose from container
+      - 80:80                                 #port mapping / expose from container
     depends_on:
       - meandemo_express_node                 #dependency service
 networks:
