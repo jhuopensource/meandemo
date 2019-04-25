@@ -13,7 +13,7 @@ mongoose.connect('mongodb://meandemo_mongo/mean-angular6',options);
 
 //on connection
 mongoose.connection.on('connected',()=>{
-    console.log('Successfully connected to database mongodb @ 27017');
+    console.log('Successfully connected to database mean-angular6 @ meandemo_mongo:27017');
 });
 mongoose.connection.on('error',(err)=>{
     if(err)
