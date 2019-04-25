@@ -18,7 +18,7 @@ mongoose.connection.on('connected',()=>{
 mongoose.connection.on('error',(err)=>{
     if(err)
     {
-        console.log('Error!! in database connection:' +err);
+        console.log('Error!! in database connection to mean-angular6 @ meandemo_mongo:27017:' +err);
     }
 });
 
