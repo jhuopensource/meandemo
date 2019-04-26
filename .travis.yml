@@ -28,9 +28,9 @@ script:
 ## begin deploy push to Docker registry
 #######################################
 after_success:
-  if: branch = master 
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-    - docker push jhuopensource/meandemo:mongo
-    - docker push jhuopensource/meandemo:express_node
-    - docker push jhuopensource/meandemo:nginx_angular_node
-  
+    - if [[ "$TRAVIS_BRANCH" = master ]]; then
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - docker push jhuopensource/meandemo:mongo
+      - docker push jhuopensource/meandemo:express_node
+      - docker push jhuopensource/meandemo:nginx_angular_node
+      fi
