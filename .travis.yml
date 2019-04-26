@@ -23,14 +23,13 @@ script:
   - cd project
   - docker-compose build
   - docker images
+  - echo "Branch " $TRAVIS_BRANCH " detected." 
 
 #######################################
 ## begin deploy push to Docker registry
 #######################################
 after_success:
-    - if [[ "$TRAVIS_BRANCH" = master ]]; then
-      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-      - docker push jhuopensource/meandemo:mongo
-      - docker push jhuopensource/meandemo:express_node
-      - docker push jhuopensource/meandemo:nginx_angular_node
+    - if [[ "$TRAVIS_BRANCH" = master ]]; 
+      then - printf "Build Success\nInitiating Docker Hub Push from " $TRAVIS_BRANCH " build." && echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push jhuopensource/meandemo:mongo && docker push jhuopensource/meandemo:express_node && docker push jhuopensource/meandemo:nginx_angular_node;
+      else - printf "Build Success\nNOT pushing to Docker Hub for " $TRAVIS_BRANCH " build";
       fi
