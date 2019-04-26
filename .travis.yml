@@ -8,23 +8,29 @@ env:
 
 branches:
   only:
-  - master
-  - staging
+    - master
+    - staging
 
 before_install:
-  - sudo rm /usr/local/bin/docker-compose
+- sudo rm /usr/local/bin/docker-compose
+
+install:
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
+  - chmod +x /usr/local/bin/docker-compose
 
 script:
   - cd project
   - docker-compose build
   - docker images
-  
-if: branch = master 
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push jhuopensource/meandemo:mongo
-  - docker push jhuopensource/meandemo:express_node
-  - docker push jhuopensource/meandemo:nginx_angular_node
+
+#######################################
+## begin deploy push to Docker registry
+#######################################
+after_success:
+  if: branch = master 
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - docker push jhuopensource/meandemo:mongo
+    - docker push jhuopensource/meandemo:express_node
+    - docker push jhuopensource/meandemo:nginx_angular_node
   
