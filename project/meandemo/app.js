@@ -12,10 +12,10 @@ mongoose.connect('mongodb://meandemo_mongo/mean-angular6',options);
   }, 10000);
 
 //on connection
-mongoose.connection.on('connected',()=>{
+mongoose.connection.on('connected', function(){
     console.log('Successfully connected to database mean-angular6 @ meandemo_mongo:27017');
 });
-mongoose.connection.on('error',(err)=>{
+mongoose.connection.on('error', function(err){
     if(err)
     {
         console.log('Error!! in database connection to mean-angular6 @ meandemo_mongo:27017:' +err);

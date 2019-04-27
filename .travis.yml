@@ -10,6 +10,7 @@ branches:
   only:
     - master
     - stage
+    - dev
 
 before_install:
 - sudo rm /usr/local/bin/docker-compose
@@ -21,7 +22,7 @@ install:
 
 script:
   - cd project
-  - docker-compose build
+  - docker-compose build --no-cache
   - docker images
   - echo "Branch " $TRAVIS_BRANCH " detected." 
 
