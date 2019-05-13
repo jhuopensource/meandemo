@@ -8,6 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "lint-server": "eslint app.js routes models",
     "e2e": "ng e2e",
     "watch": "ng build --poll 1000 --watch & node ./bin/www"
   },

@@ -11,11 +11,11 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 export class entryEditComponent implements OnInit {
 
   entryForm: FormGroup;
-  id:string = '';
-  URL:string = '';
-  title:string = '';
-  description:string = '';
-  author:string = '';
+  id = '';
+  URL = '';
+  title = '';
+  description = '';
+  author = '';
 
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
 
@@ -41,10 +41,10 @@ export class entryEditComponent implements OnInit {
     });
   }
 
-  onFormSubmit(form:NgForm) {
+  onFormSubmit(form: NgForm) {
     this.api.updateentry(this.id, form)
       .subscribe(res => {
-          let id = res['_id'];
+          const id = res['_id'];
           this.router.navigate(['/entry-details', id]);
         }, (err) => {
           console.log(err);
