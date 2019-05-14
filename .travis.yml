@@ -36,11 +36,6 @@ script:
 after_success:
   - if [[ $TRAVIS_BRANCH == master ]]; 
     then 
-    - if [[ type IN (pull_request) ]]; 
-    then printf "Build Success\nInitiating Docker Hub Push\n" && echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push jhuopensource/meandemo:mongo && docker push jhuopensource/meandemo:express_node && docker push jhuopensource/meandemo:nginx_angular_node;
-    else printf "Build Success\nNOT pushing to Docker Hub for " $TRAVIS_BRANCH " build";
-    fi
-    
-    printf "Build Success\n";
+    printf "Build Success\nInitiating Docker Hub Push\n" && echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push jhuopensource/meandemo:mongo && docker push jhuopensource/meandemo:express_node && docker push jhuopensource/meandemo:nginx_angular_node;
     else printf "Build Success\nNOT pushing to Docker Hub for " $TRAVIS_BRANCH " build";
     fi
