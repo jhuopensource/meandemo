@@ -37,9 +37,7 @@ after_success:
   - if [[ $TRAVIS_BRANCH == master ]]; 
     then 
       - if [[ $TRAVIS_PULL_REQUEST == true ]]; 
-          then
-            printf "Build Success\nNOT pushing to Docker Hub for Pull Requests" $TRAVIS_BRANCH " build";
-          else
-            printf "Build Success\nInitiating Docker Hub Push to trigger Swarm Deployment\n" && echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push jhuopensource/meandemo:mongo && docker push jhuopensource/meandemo:express_node && docker push jhuopensource/meandemo:nginx_angular_node;
+        then printf "Build Success\nNOT pushing to Docker Hub for Pull Requests" $TRAVIS_BRANCH " build";
+        else printf "Build Success\nInitiating Docker Hub Push to trigger Swarm Deployment\n" && echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push jhuopensource/meandemo:mongo && docker push jhuopensource/meandemo:express_node && docker push jhuopensource/meandemo:nginx_angular_node;
         fi 
     fi
