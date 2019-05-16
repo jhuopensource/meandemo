@@ -8,21 +8,6 @@ import { Observable } from 'rxjs';
   templateUrl: './entry.component.html',
   styleUrls: ['./entry.component.css']
 })
-
-export class entryDataSource extends DataSource<any> {
-  constructor(private api: ApiService) {
-    super();
-  }
-
-  connect() {
-    return this.api.getentries();
-  }
-
-  disconnect() {
-
-  }
-}
-
 export class entryComponent implements OnInit {
 
   entries: any;
@@ -42,4 +27,16 @@ export class entryComponent implements OnInit {
   }
 }
 
+export class entryDataSource extends DataSource<any> {
+  constructor(private api: ApiService) {
+    super()
+  }
 
+  connect() {
+    return this.api.getentries();
+  }
+
+  disconnect() {
+
+  }
+}
