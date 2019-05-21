@@ -26,9 +26,12 @@ script:
   - docker-compose build --no-cache
   - docker images
   - echo "Branch " $TRAVIS_BRANCH " detected." 
-  ## Run the linter 
+  - echo Run the linter 
   - docker run -it --rm jhuopensource/meandemo:express_node /usr/src/app/node_modules/.bin/eslint -c ./.eslintrc.js ./app.js --debug
-  ## Run e2e Tests 
+  - echo build and run Angular Tests
+  - docker build -t tester -f meandemo/TestDockerfile meandemo
+  - docker run tester npm run testheadless
+  - echo Run e2e Tests 
   - docker-compose -f docker-compose.yml -f docker-compose-e2e.yml run tester npm run e2e
 
 ###########################################
