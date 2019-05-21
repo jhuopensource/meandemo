@@ -1,0 +1,9 @@
+version: '3.7'                                #additional compose for running tests
+services:
+  selenium:
+    image: selenium/standalone-chrome
+  tester:                      # For testing, we need to depend on everything else as it's the container running tests
+    image: jhuopensource/meandemo:express_node
+    depends_on:
+      - selenium
+      - meandemo_nginx_angular_node

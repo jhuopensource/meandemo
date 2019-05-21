@@ -6,11 +6,12 @@ language: node_js
 env:
   - DOCKER_COMPOSE_VERSION=1.24.0
 
-branches:
-  only:
-    - master
-    - stage
-    - dev
+# Run everywhere
+#branches:
+#  only:
+#    - master
+#    - stage
+#    - dev
 
 before_install:
 - sudo rm /usr/local/bin/docker-compose
@@ -25,10 +26,10 @@ script:
   - docker-compose build --no-cache
   - docker images
   - echo "Branch " $TRAVIS_BRANCH " detected." 
-  ###############
-  ## lint test ##
-  ###############
+  ## Run the linter 
   - docker run -it --rm jhuopensource/meandemo:express_node /usr/src/app/node_modules/.bin/eslint -c ./.eslintrc.js ./app.js --debug
+  ## Run e2e Tests 
+  - docker-compose -f docker-compose.yml -f docker-compose-e2e.yml run tester npm run e2e
 
 ###########################################
 ## Push Master Builds to Docker Registry ##
