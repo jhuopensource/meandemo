@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "lint-server": "eslint app.js routes models",
-    "e2e": "wait-on -t 30000 http-get://selenium:4444 && protractor e2e/protractor.conf.js",
+    "e2e": "wait-on -t 30000 http-get://selenium:4444 && wait-on -t 30000 http-get://meandemo_nginx_angular_node && protractor e2e/protractor.conf.js",
     "watch": "ng build --poll 1000 --watch & node ./bin/www"
   },
   "private": true,
