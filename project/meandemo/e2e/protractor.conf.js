@@ -4,6 +4,7 @@
 const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
+  seleniumAddress: "http://selenium:4444/wd/hub",
   allScriptsTimeout: 11000,
   specs: [
     './src/**/*.e2e-spec.ts'
@@ -11,8 +12,7 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome'
   },
-  directConnect: true,
-  baseUrl: 'http://meandemo_express_node:4200/',
+  baseUrl: 'http://meandemo_nginx_angular_node/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,

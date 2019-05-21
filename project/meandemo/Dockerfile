@@ -2,8 +2,8 @@ FROM node:10.15.3-alpine
 RUN mkdir -p /usr/src/app
 COPY . /usr/src/app
 WORKDIR /usr/src/app
-RUN export npm_config_loglevel=silent && npm cache clean --force && cd /usr/src/app && npm install && npm run-script build
-RUN npm audit fix
+# removed export npm_config_loglevel=silent && npm cache clean --force && 
+RUN cd /usr/src/app && npm install && npm run-script build
 EXPOSE 3000 4200
 CMD ["npm","run-script","serve"]
 

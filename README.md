@@ -13,15 +13,20 @@ In order to share a baseline understanding of containerization technologies buil
 
 ### Docker Hub JHUOPENSOURCE repo pull commands for project images
 Pulling from the Hub is optional for those who just want to run (this meets the "SHIP" requirement)
-* docker push jhuopensource/meandemo:nginx_angular_node
-* docker push jhuopensource/meandemo:express_node
-* docker push jhuopensource/meandemo:mongo
+* `docker push jhuopensource/meandemo:nginx_angular_node`
+* `docker push jhuopensource/meandemo:express_node`
+* `docker push jhuopensource/meandemo:mongo`
 
 ### Docker Hub Integration added 4/22/19
 All automatic image builds are stored in the Docker Hub jhuopensource registry
-* docker pull jhuopensource/meandemo:mongo
-* docker pull jhuopensource/meandemo:express_node
-* docker pull jhuopensource/meandemo:nginx_angular_node
+* `docker pull jhuopensource/meandemo:mongo`
+* `docker pull jhuopensource/meandemo:express_node`
+* `docker pull jhuopensource/meandemo:nginx_angular_node`
+
+
+### Running e2e tests using selenium in Docker
+We are using an additional docker container that runs the browser for selenium tests that is not part of the regular compose setup, we can specify a 2nd compose file to be used in addition in our command to run these tests as the selenium container is only used for tests and it not necessary for regular operation
+* `docker-compose -f docker-compose.yml -f docker-compose-e2e.yml run tester npm run e2e`
 
 ## Authors
 * **Mike Sellers - JHU - Container Zealot and Senior Software Engineer**

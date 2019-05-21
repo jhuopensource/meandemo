@@ -20,7 +20,8 @@ services:                                     #Define the services to be run
     build: 
       context: ./nginx                        #relative location of Dockerfile
     ports:
-      - "8080:80"                             #port mapping / expose 8080 from container internal 80
+      - "8080:80"                             #port mapping / map the host port 8080 to container internal 80 running nginx
     depends_on:
       - meandemo_express_node                 #dependency service
+
   
