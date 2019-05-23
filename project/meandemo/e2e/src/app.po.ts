@@ -8,7 +8,6 @@ export class AppPage {
   async getParagraphText() {
     return element(by.css('h1')).getText();
   }
-<<<<<<< HEAD
 
   async createEntry() {
     var EC = protractor.ExpectedConditions;
@@ -37,12 +36,9 @@ export class AppPage {
     await element(by.id('edit')).click();
     await element(by.css("textarea[formControlName=description]")).sendKeys(' Was just CI/CD Pipieline Integrated.');
     await element(by.id('save')).click();  
-    //await element(by.id('delete')).click();
+    await element(by.id('delete')).click();
     return;
   }
 
   
 }
-=======
-}
->>>>>>> 9f7b77fa5391ea60b91ca74aa9d824ecb058e90d
