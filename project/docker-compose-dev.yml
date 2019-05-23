@@ -4,8 +4,8 @@ services:                                     #Define the services to be run
     image: jhuopensource/meandemo:mongo
     build: 
       context: ./mongo                        #relative location of Dockerfile
-    #ports:
-      #- "27017:27017"                        #port mapping / expose from container
+    ports:
+      - "27017:27017"                        #port mapping / expose from container
   meandemo_express_node:                      #name of service
     image: jhuopensource/meandemo:express_node
     build: 
@@ -14,9 +14,9 @@ services:                                     #Define the services to be run
     volumes:
       - ./meandemo:/usr/src/app               # Use local FS for code so we can edit
       - /usr/src/app/node_modules             # Use local node_modules from image, no need to expose     
-    #ports:
-      #- "3000:3000"                          #port mapping / expose from container
-      #- "4200:4200"                          #port mapping / expose from container
+    ports:
+      - "3000:3000"                          #port mapping / expose from container
+      - "4200:4200"                          #port mapping / expose from container
     depends_on:
       - meandemo_mongo                        #dependency service
   meandemo_nginx_angular_node:                #name of service
@@ -24,10 +24,14 @@ services:                                     #Define the services to be run
     build: 
       context: ./nginx                        #relative location of Dockerfile
     volumes:
-      - ./meandemo/dist:/usr/share/nginx/html # Use local FS for code so we can edit      
-      - ./nginx/conf:/etc/nginx/conf.d
+      #- ./meandemo/dist:/usr/share/nginx/html # Use local FS for code so we can edit      
+      - ./meandemo/e2e:/usr/src/app/e2e
     ports:
       - "8080:80"                             #port mapping / expose 8080 from container internal 80
     depends_on:
       - meandemo_express_node                 #dependency service
+  selenium:
+    image: selenium/standalone-chrome-debug
+    ports:
+      - "5900:5900"    
   

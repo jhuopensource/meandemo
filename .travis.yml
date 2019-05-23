@@ -24,11 +24,17 @@ install:
 script:
   - cd project
   - docker-compose build --no-cache
+  - echo "Build Tester"
+  - docker build -t tester -f meandemo/TestDockerfile meandemo
   - docker images
   - echo "Branch " $TRAVIS_BRANCH " detected." 
-  ## Run the linter 
-  - docker run -it --rm jhuopensource/meandemo:express_node /usr/src/app/node_modules/.bin/eslint -c ./.eslintrc.js ./app.js --debug
-  ## Run e2e Tests 
+  - echo Run the linters
+  # TODO change line below to be npm
+  - docker run -it --rm jhuopensource/meandemo:express_node /usr/src/app/node_modules/.bin/eslint -c ./.eslintrc.js ./app.js
+  - docker run tester npm run lint
+  - echo Run Angular Tests
+  - docker run tester npm run testheadless
+  - echo Run e2e Tests 
   - docker-compose -f docker-compose.yml -f docker-compose-e2e.yml run tester npm run e2e
 
 ###########################################
