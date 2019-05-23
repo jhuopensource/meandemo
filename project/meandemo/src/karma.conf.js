@@ -5,6 +5,12 @@ module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    customLaunchers: {
+      MyChromeHeadless: {
+        base: 'Chrome',
+        flags: ['--disable-gpu', '--no-sandbox', '--headless', '--remote-debugging-port=9222']
+      }
+    },
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),

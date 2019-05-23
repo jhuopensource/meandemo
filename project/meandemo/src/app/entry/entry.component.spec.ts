@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA  } from '@angular/core';
+import { MatTableModule } from '@angular/material';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { entryComponent } from './entry.component';
 
 describe('entryComponent', () => {
@@ -8,7 +11,9 @@ describe('entryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ entryComponent ]
+      imports: [ RouterTestingModule, MatTableModule, HttpClientTestingModule ],
+      declarations: [ entryComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA  ]
     })
     .compileComponents();
   }));
