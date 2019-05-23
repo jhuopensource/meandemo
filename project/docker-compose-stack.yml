@@ -2,12 +2,24 @@ version: '3.7'                                #specify docker-compose file forma
 services:                                     #Define the services to be run
   meandemo_mongo:                             # name of service
     image: jhuopensource/meandemo:mongo       #specify the image to build the container from
+    update_config:
+      parallelism: 1
+      delay: 10s
+      order: stop-first
+      failure_action: rollback
+      max_failure_ratio: 0
     networks:
       - mean-net
     #ports:
       #- 27017:27017                           #port mapping / expose from container
   meandemo_express_node:                      #name of service
     image: jhuopensource/meandemo:express_node
+    update_config:
+      parallelism: 1
+      delay: 10s
+      order: start-first
+      failure_action: rollback
+      max_failure_ratio: 0
     networks:
       - mean-net
     #ports:
@@ -17,6 +29,12 @@ services:                                     #Define the services to be run
       - meandemo_mongo                        #dependency service
   meandemo_nginx_angular_node:                #name of service
     image: jhuopensource/meandemo:nginx_angular_node
+    update_config:
+      parallelism: 1
+      delay: 10s
+      order: start-first
+      failure_action: rollback
+      max_failure_ratio: 0
     networks:
       - mean-net
     ports:
