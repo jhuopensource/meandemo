@@ -17,7 +17,7 @@
     </dl>
   </mat-card-content>
   <mat-card-actions>
-    <a mat-raised-button color="primary" [routerLink]="['/entry-edit', entry._id]"><mat-icon>edit</mat-icon></a>
-    <a mat-raised-button color="warn" (click)="deleteentry(entry._id)"><mat-icon>delete</mat-icon></a>
+    <a id="edit" mat-raised-button color="primary" [routerLink]="['/entry-edit', entry._id]"><mat-icon>edit</mat-icon></a>
+    <a id="delete" mat-raised-button color="warn" (click)="deleteentry(entry._id)"><mat-icon>delete</mat-icon></a>
   </mat-card-actions>
 </mat-card>
