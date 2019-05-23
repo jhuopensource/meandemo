@@ -12,6 +12,7 @@ describe('workspace-project App', () => {
     await page.navigateTo();
     expect(await page.getParagraphText()).toEqual('One MEAN CRUD on Docker Demo');
   });
+<<<<<<< HEAD
 
   it('It should allow form data entry.', async () => {
     await page.navigateTo();
@@ -21,3 +22,6 @@ describe('workspace-project App', () => {
   });
 
 });
+=======
+});
+>>>>>>> 9f7b77fa5391ea60b91ca74aa9d824ecb058e90d

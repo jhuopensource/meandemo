@@ -29,7 +29,7 @@ export class entryComponent implements OnInit {
 
 export class entryDataSource extends DataSource<any> {
   constructor(private api: ApiService) {
-    super()
+    super();
   }
 
   connect() {

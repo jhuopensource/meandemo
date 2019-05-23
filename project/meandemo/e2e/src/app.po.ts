@@ -8,6 +8,7 @@ export class AppPage {
   async getParagraphText() {
     return element(by.css('h1')).getText();
   }
+<<<<<<< HEAD
 
   async createEntry() {
     var EC = protractor.ExpectedConditions;
@@ -42,3 +43,6 @@ export class AppPage {
 
   
 }
+=======
+}
+>>>>>>> 9f7b77fa5391ea60b91ca74aa9d824ecb058e90d
