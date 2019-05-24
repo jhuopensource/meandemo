@@ -27,6 +27,7 @@ All automatic image builds are stored in the Docker Hub jhuopensource registry
 ### Running e2e tests using selenium in Docker
 We are using an additional docker container that runs the browser for selenium tests that is not part of the regular compose setup, we can specify a 2nd compose file to be used in addition in our command to run these tests as the selenium container is only used for tests and it not necessary for regular operation
 * `docker-compose -f docker-compose.yml -f docker-compose-e2e.yml run tester npm run e2e`
+If you want to run in dev mode where you can edit locally without having to rebuild, you can run `docker-compose -f docker-compose-dev.yml up` and connect to the express_node container and you can run `npm e2e` as you are editing code. In this mode you can use VNC to see the test in action
 
 ### Running Angular Karma tests in Docker
 Angular unit tests require a browser (Chrome in this case). Instead of installing this on the actual express server, we're using an existing Docker image to run these tests against our codebase from the express container. First build the tester container with `docker build -t tester  -f meandemo/TestDockerfile meandemo` then run `docker run tester npm run testheadless`
