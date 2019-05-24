@@ -25,7 +25,7 @@ services:                                     #Define the services to be run
       context: ./nginx                        #relative location of Dockerfile
     volumes:
       #- ./meandemo/dist:/usr/share/nginx/html # Use local FS for code so we can edit      
-      - ./meandemo/e2e:/usr/src/app/e2e
+      - ./meandemo:/usr/src/app
     ports:
       - "8080:80"                             #port mapping / expose 8080 from container internal 80
     depends_on:
