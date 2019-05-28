@@ -29,8 +29,7 @@ script:
   - docker images
   - echo "Branch " $TRAVIS_BRANCH " detected." 
   - echo Run the linters
-  # TODO change line below to be npm
-  - docker run -it --rm jhuopensource/meandemo:express_node /usr/src/app/node_modules/.bin/eslint -c ./.eslintrc.js ./app.js
+  - docker run tester npm run lint-server
   - docker run tester npm run lint
   - echo Run Angular Tests
   - docker run tester npm run testheadless
