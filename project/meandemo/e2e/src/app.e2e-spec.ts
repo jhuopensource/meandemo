@@ -19,15 +19,17 @@ describe('meandemo App', () => {
   });
 
   it('should edit an entry', async () => {
+    const newTitle = 'Edited Demo';
+    const newDescription = 'CI/CD Pipeline Integrated.';
     await page.createEntry();
-    await page.editEntry();
-    // TODO expect(await page.getEntryDescription()).toEqual('CI/CD Pipieline Integrated.');
+    await page.editEntry(newTitle, newDescription);
+    expect(await page.getEntryTitle()).toEqual(newTitle);
+    expect(await page.getEntryDescription()).toEqual(newDescription);
   });
 
   it('should delete an entry', async () => {
     await page.createEntry();
     await page.deleteEntry();
-    // TODO: check that it's gone
   });
 
 });

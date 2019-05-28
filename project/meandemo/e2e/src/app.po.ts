@@ -28,20 +28,19 @@ export class AppPage {
   }
 
   async getEntryDescription() {
-    const EC = protractor.ExpectedConditions;
-    await element(by.id('edit')).click(); // description is visible when editing
-    // TODO await browser.wait(EC.textToBePresentInElement(element(by.css('input[formControlName=title]')),'Edited Demo')
-    // , 5000, 'title taking too long to appear in the DOM');
+    return element(by.css('h3')).getText();
   }
 
   async deleteEntry() {
     await element(by.id('delete')).click();
   }
 
-  async editEntry() {
+  async editEntry(newTitle: string, newDescription: string) {
     await element(by.id('edit')).click();
     await element(by.css('input[formControlName=title]')).clear();
-    await element(by.css('input[formControlName=title]')).sendKeys('Edited Demo');
+    await element(by.css('input[formControlName=title]')).sendKeys(newTitle);
+    await element(by.css('textarea[formControlName=description]')).clear();
+    await element(by.css('textarea[formControlName=description]')).sendKeys(newDescription);
     await element(by.id('save')).click();
     return;
   }
