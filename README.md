@@ -3,6 +3,8 @@ The project contained in this repository provides a basic working CRUD applicati
 
 In order to share a baseline understanding of containerization technologies built on Docker along with the practical knowledge necessary to begin building, shipping and deploying MEAN (Mongo / Express / Angular / Node.js) applications in containers, this project has been developed and made available through our public repo.
 
+This project contains all content from "One MEAN CI/CD Docker Demo" presented at the Docker Government Summit in Tysons Corner VA on May 29, 2019.
+
 ### Prerequisites
 - Internet Connection
 - Running Docker Engine
