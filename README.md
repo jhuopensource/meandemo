@@ -39,5 +39,5 @@ Angular unit tests require a browser (Chrome in this case). Instead of installin
 * **Ali Soylu - JHU - Developer and IT Architect**
 
 ## Acknowledgments
-* This project was inspired by the Johns Hopkins University (JHU ACM) Association for Computing Machinery https://johnshopkins.campuslabs.com/engage/organization/associationforcomputingmachineryjhu and their passion for computing as well as their desire to collaborate.
+* This project was inspired by the Johns Hopkins University (JHU ACM) Association for Computing Machinery https://johnshopkins.campuslabs.com/engage/organization/associationforcomputingmachineryjhu and their passion for computing as well as their desire to collaborate with others.
 * This application was adapted and enhaced from the "MEAN Stack Angular 6 CRUD Web Application" by Didin, J. https://www.djamware.com/post/5b00bb9180aca726dee1fd6d/mean-stack-angular-6-crud-web-application.
