@@ -10,7 +10,7 @@ describe('meandemo App', () => {
   });
 
   it('should display the title welcome message', async () => {
-    expect(await page.getParagraphText()).toEqual('One MEAN CRUD on Docker Demo');
+    expect(await page.getParagraphText()).toEqual('1 MEAN CRUD on Docker Demo');
   });
 
   it('should create an entry', async () => {
