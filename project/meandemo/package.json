@@ -30,7 +30,7 @@
     "core-js": "^2.5.4",
     "express": "^4.16.4",
     "http-errors": "^1.7.2",
-    "mongoose": "^5.5.2",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "rxjs": "^6.4.0",
     "serve-favicon": "^2.5.0",
